@@ -86,13 +86,15 @@ The server will start at [http://localhost:3000](http://localhost:3000).
 
 ### API Endpoints
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/api/assignments` | List all assignments |
-| POST | `/api/assignments` | Create a new assignment |
-| GET | `/api/assignments/{id}` | Get assignment details |
-| PUT | `/api/assignments/{id}` | Update an assignment |
-| DELETE | `/api/assignments/{id}` | Delete an assignment |
+| Endpoint | Method | Description | Success Response | Error Response |
+|----------|--------|-------------|------------------|----------------|
+| `/api/assignments` | GET | Get list of all assignments | 200 with `Assignment[]` | - |
+| `/api/assignments` | POST | Create a new assignment | 201 with created `Assignment` | 400 invalid payload |
+| `/api/assignments/{id}` | GET | Get assignment detail by ID | 200 with `Assignment` | 400 invalid ID, 404 not found |
+| `/api/assignments/{id}` | PUT | Update assignment by ID | 200 with updated `Assignment` | 400 invalid ID/body, 404 not found |
+| `/api/assignments/{id}` | DELETE | Delete assignment by ID | 200 with delete message | 400 invalid ID, 404 not found |
+| `/api/swagger` | GET | OpenAPI 3.0 JSON specification | 200 OpenAPI JSON | - |
+| `/docs` | GET | Swagger UI interactive documentation | 200 Swagger UI | - |
 
 ## API Documentation
 

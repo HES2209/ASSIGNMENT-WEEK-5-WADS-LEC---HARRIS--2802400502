@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Assignment 1",
+    "description": "Complete the web development task",
+    "dueDate": "2024-03-20",
+    "subject": "Web Application Development",
+    "status": "pending",
+    "id": "assign_1772698730361",
+    "createdAt": "2026-03-05T08:18:50.361Z",
+    "updatedAt": "2026-03-05T08:18:50.361Z"
+  },
+  {
+    "title": "Assignment 1",
+    "description": "Complete the web development task",
+    "dueDate": "2024-03-20",
+    "subject": "Web Application Development",
+    "status": "pending",
+    "id": "assign_1772698757062",
+    "createdAt": "2026-03-05T08:19:17.062Z",
+    "updatedAt": "2026-03-05T08:19:17.062Z"
+  }
+]

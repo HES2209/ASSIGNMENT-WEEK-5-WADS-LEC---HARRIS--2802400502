@@ -3,11 +3,11 @@ import { getAssignmentById, updateAssignment, deleteAssignment } from '@/lib/db'
 
 // GET /api/assignments/[id] - Get assignment detail
 export async function GET(
-  request: NextRequest,
-  { params }: { params: { id: string } }
+  _request: NextRequest,
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const { id } = params;
+    const { id } = await params;
     const assignment = getAssignmentById(id);
 
     if (!assignment) {
@@ -43,10 +43,10 @@ export async function GET(
 // PUT /api/assignments/[id] - Update assignment
 export async function PUT(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const { id } = params;
+    const { id } = await params;
     const body = await request.json();
 
     const assignment = getAssignmentById(id);
@@ -90,11 +90,11 @@ export async function PUT(
 
 // DELETE /api/assignments/[id] - Delete assignment
 export async function DELETE(
-  request: NextRequest,
-  { params }: { params: { id: string } }
+  _request: NextRequest,
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const { id } = params;
+    const { id } = await params;
     const assignment = getAssignmentById(id);
 
     if (!assignment) {
